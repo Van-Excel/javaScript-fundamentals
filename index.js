@@ -7,37 +7,32 @@ appDiv.innerHTML = `<h1>JS Starter</h1>`;
 
 // alert('I am javascript');
 
-console.log(2)
+console.log(2);
 
 let mess = 'van';
 let car = mess;
 console.log(mess == car);
 
-
-let lastname = 'acheampong'
-let firstname = 'van'
-
+let lastname = 'acheampong';
+let firstname = 'van';
 
 //string concatenation
-console.log(lastname + ' ' + firstname)
-
+console.log(lastname + ' ' + firstname);
 
 let last = 'can';
 let first = 'vann';
 
 //template strings
 
-console.log(`${last} ${first}`)
+console.log(`${last} ${first}`);
 
+let pie = null;
+console.log(typeof pie);
 
-let pie = null
-console.log(typeof pie)
-
-console.log( pie === null)
+console.log(pie === null);
 
 //let result = prompt('where is your school located?',['Accra']);
 //console.log(result);
-
 
 /*let ans = confirm('are you a doctor?');
 if (ans == true) {
@@ -45,58 +40,55 @@ if (ans == true) {
 }
 */
 
-
-console.log(2 + '3')
- 
+console.log(2 + '3');
 
 let counter = 3;
-let a = counter++
-console.log(a)
-console.log(counter)
+let a = counter++;
+console.log(a);
+console.log(counter);
 
 let additive = 4;
 let b = --additive;
-console.log(b)
-b++
-console.log(b)
+console.log(b);
+b++;
+console.log(b);
 
-console.log('1' + '0')
-
-
+console.log('1' + '0');
 
 //conditional branching
 //ternary operator
 let ride = 'accra';
-let town = ride == 'accra'? 'drive to accra':'order a new ride';
+let town = ride == 'accra' ? 'drive to accra' : 'order a new ride';
 console.log(town);
 
 //sequence of ternary operator tests
 let age = 29;
-let message = (age < 10)? 'Hello':
-age < 20 ? 'proceed':
-age < 30 ? 'take the stairs': 
-'wrong cohort';
+let message =
+  age < 10
+    ? 'Hello'
+    : age < 20
+    ? 'proceed'
+    : age < 30
+    ? 'take the stairs'
+    : 'wrong cohort';
 console.log(message);
-
 
 //testing a condition to run a block of code
 let van = 'male';
-if( van == 'female'){
-    console.log('f');
-
-}else {
-    console.log('m');
+if (van == 'female') {
+  console.log('f');
+} else {
+  console.log('m');
 }
-
 
 //test multiple  conditions
 let drug = 'tylenol';
-if (drug == 'para'){
-    console.log('headache');
-}else if (drug == 'vitamins'){
-    console.log('ulcer')
-}else{
-    console.log('prescribed tylenol for migraine');
+if (drug == 'para') {
+  console.log('headache');
+} else if (drug == 'vitamins') {
+  console.log('ulcer');
+} else {
+  console.log('prescribed tylenol for migraine');
 }
 
 //tasks
@@ -126,12 +118,10 @@ if (c + d < 4) {
 let c = 2;
 let d = 3;
 
-let result = (c + d < 4)? 'Below': 'Over';
-console.log(result)
-
+let result = c + d < 4 ? 'Below' : 'Over';
+console.log(result);
 
 //logical operators
-
 
 //chained OR ||- returns the first truthy value without conversion
 // if all values are false, returns the last falsy
@@ -139,5 +129,86 @@ let fname = '';
 let lname = null;
 let localname = 'Van';
 
-let newCondition = (fname || lname|| localname);
-console.log(newCondition)
+let newCondition = fname || lname || localname;
+console.log(newCondition);
+
+//chained AND &&- returns the first falsy value without conversion
+let t1 = '0';
+let t2 = 'ihn';
+let t3 = 0;
+
+let t_result = t1 && t2 && t3;
+console.log(t_result);
+
+//NOT operator !
+//accepts a single argument, converts it to boolean and returns the inverse
+
+console.log(!0); // returns inverse of false -- true
+
+// double exclamation !! - converts value to boolean
+
+let t5 = !!'vanexcel';
+console.log(t5); // same as using Boolean() function
+
+let t6 = !!null;
+console.log(t6);
+
+// nullish coalescing operator
+//returns the first defined value
+
+let user = 'hank';
+console.log(user ?? 'not known');
+
+//Loops
+//while loop- while the condition is true, code in the loop body runs
+//each single execution of the loop body is called an iteration
+//code stops when loop condition returns false
+//state, counters, recursion- using output as new source of input
+
+let i = 0;
+let u = [];
+while (i < 5) {
+  console.log(i);
+  u.push(i);
+  console.log(u);
+  i++;
+}
+
+//do...while loop
+//used when we want the body of the loop to execute at least once
+//regardless of the condition being truthy or false.
+
+let loop1 = 2;
+do {
+  console.log(`i am ${loop1} years old`);
+  loop1++;
+} while (loop1 < 6);
+
+
+//for loop 
+//has the begin, condition and step parts
+let array1 = [];
+for (let loop2 = 1; loop2 < 5; loop2++){
+  let r = loop2 * 2
+  array1.push(r)
+  console.log(array1)
+}
+
+
+//switch statement
+//utilizes the break statement
+
+let case1 = 3;
+switch (case1) {
+  case 1:
+    console.log('you are close')
+    break;
+  case 2:
+    console.log('not true')
+    break;
+case 3:
+  console.log('true');
+  break;
+default:
+  console.log('we didnt find it')
+}
