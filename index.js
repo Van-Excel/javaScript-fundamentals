@@ -184,16 +184,14 @@ do {
   loop1++;
 } while (loop1 < 6);
 
-
-//for loop 
+//for loop
 //has the begin, condition and step parts
 let array1 = [];
-for (let loop2 = 1; loop2 < 5; loop2++){
-  let r = loop2 * 2
-  array1.push(r)
-  console.log(array1)
+for (let loop2 = 1; loop2 < 5; loop2++) {
+  let r = loop2 * 2;
+  array1.push(r);
+  console.log(array1);
 }
-
 
 //switch statement
 //utilizes the break statement
@@ -201,14 +199,171 @@ for (let loop2 = 1; loop2 < 5; loop2++){
 let case1 = 3;
 switch (case1) {
   case 1:
-    console.log('you are close')
+    console.log('you are close');
     break;
   case 2:
-    console.log('not true')
+    console.log('not true');
     break;
-case 3:
-  console.log('true');
-  break;
-default:
-  console.log('we didnt find it')
+  case 3:
+    console.log('true');
+    break;
+  default:
+    console.log('we didnt find it');
 }
+
+//functions
+//function declarations
+
+//design a function that shows sender and recipient of message
+
+function messageDetails(sender, recipient) {
+  let messageStatus = `this message was sent by ${sender} to ${recipient}`;
+  console.log(messageStatus);
+  return messageStatus;
+}
+//calling function messageDetails
+messageDetails('Van', 'Lynn');
+
+
+//how to pass arrays and objects as function parameters ***
+//learn more and come back to this problem
+/*function calcArray(tArray[]) {
+  let finalArray = [];
+  for (let i = i; i < 5; ) {
+    let val = i * 5;
+    finalArray.push(val);
+    console.log(finalArray);
+    return finalArray;
+  }
+} */
+
+//calcArray([2, 1, 4]);
+
+
+//function expressions
+/* in javascript functions are first class objects which means
+they can be treated as normal objects, referenced as variables, declared as literals and even passed as function parameters 
+*/
+
+//allows us to create a new function in the middle of
+// an expression
+
+//arrow functions
+//concise syntax of functions
+
+
+//function expression
+let deal1 = function(a,b){
+  let answer = a * b;
+  console.log(answer);
+  return answer;
+}
+//calling function
+deal1(3,5)
+
+
+//arrow function version
+let deal2 = (a, b) => a * b
+console.log(deal2(3,3))
+//Objects
+//are used to store keyed collections of data and complex entities
+// a property is a key:value pair
+
+//creating objects
+let user1 = new Object(); //object constructor syntax
+let users = {}; // object literal syntax
+
+//putting properties in objects
+
+let user2 = {
+  name: 'Van',
+  age: 23,
+  school: 'Alpha Beta',
+  isAdmin: false,
+};
+
+//read property
+console.log(user2.school);
+console.log(user2);
+
+//delete property
+delete user2.isAdmin;
+console.log(user2);
+
+//use square brackets to access properties if it's multiworded
+//must also be in quotes
+
+user2['first nationality'] = 'Ghanaian';
+console.log(user2);
+console.log(user2['first nationality']);
+
+//can also be used to access object properties in expressions
+let course = 'school';
+console.log(user2[course]);
+
+//computed properties
+//using square brackets in an object literal
+
+let fruits = 'apple';
+let vegetable = 'cucumber';
+let shopCart = {
+  [fruits]: 30,
+  [vegetable]: 21,
+};
+
+console.log(shopCart);
+console.log(shopCart.cucumber);
+
+//property existence test
+console.log(shopCart.vegetable === undefined); //doesn't exist
+
+//in case the property value is undefined, use the in operator
+console.log('cucumber' in shopCart); //returns true
+
+//for...in
+// the in operators syntax is a condition that returns a boolean
+//by pairing it with the for keyword,  you can easily create a
+// for loop that loops over an object's properties
+//we can use it if we don't know the property name
+//doesn't require specificity
+
+for (let property in shopCart) {
+  console.log(shopCart[property]);
+}
+
+//write a function isEmpty() which returns true if the object has
+//no properties, false otherwise.
+
+let user3 = {};
+
+function isEmpty(user) {
+  for (let prop in user) {
+    return false;
+  }
+  return true;
+}
+
+//always try to understand the problem statement before coding
+
+//calling function
+console.log(isEmpty(user3));
+
+let salaries = {
+  John: 100,
+  Ann: 140,
+  Pete: 40,
+};
+//write code to sum the salaries and store in the variable sum
+let array4 = [];
+for (let prop in salaries) {
+  let sum = salaries[prop];
+  array4.push(sum);
+  console.log(array4);
+}
+
+let sum = 0;
+for (let i = 0; i < array4.length; i++){
+  sum = sum + array4[i];
+ 
+}
+console.log(`The sum of the salaries is ${sum}ghs`);
