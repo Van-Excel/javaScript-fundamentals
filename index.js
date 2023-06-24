@@ -184,16 +184,14 @@ do {
   loop1++;
 } while (loop1 < 6);
 
-
-//for loop 
+//for loop
 //has the begin, condition and step parts
 let array1 = [];
-for (let loop2 = 1; loop2 < 5; loop2++){
-  let r = loop2 * 2
-  array1.push(r)
-  console.log(array1)
+for (let loop2 = 1; loop2 < 5; loop2++) {
+  let r = loop2 * 2;
+  array1.push(r);
+  console.log(array1);
 }
-
 
 //switch statement
 //utilizes the break statement
@@ -201,14 +199,69 @@ for (let loop2 = 1; loop2 < 5; loop2++){
 let case1 = 3;
 switch (case1) {
   case 1:
-    console.log('you are close')
+    console.log('you are close');
     break;
   case 2:
-    console.log('not true')
+    console.log('not true');
     break;
-case 3:
-  console.log('true');
-  break;
-default:
-  console.log('we didnt find it')
+  case 3:
+    console.log('true');
+    break;
+  default:
+    console.log('we didnt find it');
 }
+
+//functions
+//function declarations
+
+//design a function that shows sender and recipient of message
+
+function messageDetails(sender, recipient) {
+  let messageStatus = `this message was sent by ${sender} to ${recipient}`;
+  console.log(messageStatus);
+  return messageStatus;
+}
+//calling function messageDetails
+messageDetails('Van', 'Lynn');
+
+
+//how to pass arrays and objects as function parameters ***
+//learn more and come back to this problem
+/*function calcArray(tArray[]) {
+  let finalArray = [];
+  for (let i = i; i < 5; ) {
+    let val = i * 5;
+    finalArray.push(val);
+    console.log(finalArray);
+    return finalArray;
+  }
+} */
+
+//calcArray([2, 1, 4]);
+
+
+//function expressions
+/* in javascript functions are first class objects which means
+they can be treated as normal objects, referenced as variables, declared as literals and even passed as function parameters 
+*/
+
+//allows us to create a new function in the middle of
+// an expression
+
+//arrow functions
+//concise syntax of functions
+
+
+//function expression
+let deal1 = function(a,b){
+  let answer = a * b;
+  console.log(answer);
+  return answer;
+}
+//calling function
+deal1(3,5)
+
+
+//arrow function version
+let deal2 = (a, b) => a * b
+console.log(deal2(3,3))
